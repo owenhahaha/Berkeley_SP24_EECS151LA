@@ -1,0 +1,9 @@
+#!/bin/sh -h 
+PYTHONHOME=/home/ff/eecs151/hammer-tools/synopsys/vcs/P-2019.06/etc/search/pyh
+export PYTHONHOME
+PYTHONPATH=/home/ff/eecs151/hammer-tools/synopsys/vcs/P-2019.06/linux64/lib/pylib27
+export PYTHONPATH
+LD_LIBRARY_PATH=/home/ff/eecs151/hammer-tools/synopsys/vcs/P-2019.06/linux64/lib:/home/ff/eecs151/hammer-tools/synopsys/vcs/P-2019.06/linux64/lib/pylib27
+export LD_LIBRARY_PATH
+/home/ff/eecs151/hammer-tools/synopsys/vcs/P-2019.06/linux64/bin/vcsfind_create_index.exe  -z  "/home/tmp/eecs151-adm/asic-project-andrew-owen/skel/build/sim-rundir/simv.daidir/debug_dump/fsearch/./idents_D6c1EP.xml.gz" -o "/home/tmp/eecs151-adm/asic-project-andrew-owen/skel/build/sim-rundir/simv.daidir/debug_dump/fsearch/fsearch.db_tmp"
+\mv "/home/tmp/eecs151-adm/asic-project-andrew-owen/skel/build/sim-rundir/simv.daidir/debug_dump/fsearch/fsearch.db_tmp" "/home/tmp/eecs151-adm/asic-project-andrew-owen/skel/build/sim-rundir/simv.daidir/debug_dump/fsearch/fsearch.db"

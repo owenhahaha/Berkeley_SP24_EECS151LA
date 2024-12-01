@@ -1,0 +1,203 @@
+{
+    "stat": {
+        "ru_self_end": {
+            "ru_utime_sec": 0.43086400000000002,
+            "ru_stime_sec": 0.094909999999999994,
+            "ru_nivcsw": 177,
+            "ru_majflt": 0,
+            "ru_maxrss_kb": 130372,
+            "ru_nvcsw": 503,
+            "ru_minflt": 10135
+        },
+        "cpu_cycles_end": 16534332837220702,
+        "ru_childs_end": {
+            "ru_utime_sec": 0.038584,
+            "ru_stime_sec": 0.053997999999999997,
+            "ru_nivcsw": 27,
+            "ru_majflt": 0,
+            "ru_maxrss_kb": 122932,
+            "ru_nvcsw": 50,
+            "ru_minflt": 5358
+        },
+        "peak_mem_kb": 337276
+    },
+    "Modules": {
+        "...MASTER...": {
+            "child_modules": {
+                "std": 1,
+                "ALUTestbench": 1
+            },
+            "start_perf": [
+                0.69430303573608398,
+                0.36643300000000001,
+                0.082459000000000005,
+                323760,
+                337276,
+                1710836914.4721529,
+                16534332492524748
+            ],
+            "nQuads": 0,
+            "end_perf": [
+                0.71846604347229004,
+                0.37065399999999998,
+                0.086762000000000006,
+                325764,
+                337276,
+                16534332555372780,
+                0,
+                0
+            ],
+            "nRouts": 5,
+            "nMops": 0
+        },
+        "std": {
+            "child_modules": {},
+            "svclass": [
+                "$vcs_nba_dyn_obj",
+                576,
+                35,
+                2,
+                2,
+                0,
+                0,
+                "sigprop$$",
+                576,
+                35,
+                2,
+                2,
+                0,
+                0,
+                "process",
+                2388,
+                200,
+                8,
+                8,
+                0,
+                0,
+                "event",
+                597,
+                34,
+                2,
+                2,
+                0,
+                0,
+                "mailbox",
+                1769,
+                140,
+                9,
+                9,
+                0,
+                0,
+                "semaphore",
+                1119,
+                84,
+                5,
+                5,
+                0,
+                0
+            ],
+            "start_perf": [
+                0.71863913536071777,
+                0.37079499999999999,
+                0.086794999999999997,
+                325764,
+                337276,
+                1710836914.496489,
+                16534332555787436
+            ],
+            "Compiled": "Yes",
+            "Compiled Times": 1,
+            "nQuads": 218,
+            "end_perf": [
+                0.75868415832519531,
+                0.391096,
+                0.088938000000000003,
+                329160,
+                337276,
+                16534332659910306,
+                0,
+                0
+            ],
+            "num_classes": 6,
+            "nRouts": 35,
+            "nMops": 528
+        },
+        "ALUTestbench": {
+            "child_modules": {},
+            "start_perf": [
+                0.75878715515136719,
+                0.391181,
+                0.088956999999999994,
+                329160,
+                337276,
+                1710836914.5366371,
+                16534332660128754
+            ],
+            "Compiled": "Yes",
+            "nRouts": 61,
+            "nMops": 1768,
+            "Compiled Times": 1,
+            "nQuads": 794,
+            "end_perf": [
+                0.79901504516601562,
+                0.42586499999999999,
+                0.093195,
+                330296,
+                337276,
+                16534332764718922,
+                7396556757292951926,
+                0
+            ]
+        }
+    },
+    "CompUnits": {
+        "amcQw_d": {
+            "bytes": 7864,
+            "mod": "...MASTER...",
+            "out": "objs/amcQw_d.o",
+            "text": 434,
+            "mode": 4,
+            "checksum": 0
+        },
+        "reYIK_d": {
+            "bytes": 39384,
+            "mod": "std",
+            "out": "reYIK_d.o",
+            "text": 7333,
+            "mode": 4,
+            "cls": 7025,
+            "checksum": 0,
+            "archive": "archive.0/_2836333_archive_1.a"
+        },
+        "fPZEP_d": {
+            "bytes": 46452,
+            "mod": "ALUTestbench",
+            "out": "fPZEP_d.o",
+            "text": 19053,
+            "mode": 4,
+            "checksum": 0,
+            "archive": "archive.0/_2836333_archive_1.a"
+        }
+    },
+    "reusePaths": {},
+    "ObjArchives": [
+        {
+            "archive": "archive.0/_2836333_archive_1.a",
+            "objects": [
+                [
+                    "reYIK_d.o",
+                    39384
+                ],
+                [
+                    "fPZEP_d.o",
+                    46452
+                ],
+                [
+                    "amcQwB.o",
+                    105074
+                ]
+            ],
+            "size": 190910
+        }
+    ]
+}

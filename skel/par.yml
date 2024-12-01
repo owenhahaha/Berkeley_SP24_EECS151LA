@@ -1,0 +1,219 @@
+# Placement Constraints (standard cells, SRAMs)
+
+# Source: hammer/src/hammer-vlsi/defaults.yml
+# - Valid options:
+#   - "r0"   (standard orientation)
+#   - "r90"  (rotated 90 degrees clockwise)
+#   - "r180" (rotated 180 degrees)
+#   - "r270" (rotated 270 degrees clockwise; equivalent to -90 degrees counterclockwise)
+#   - "mx"   (mirrored about the x-axis)
+#   - "mx90" (mirrored about the x-axis, then rotated 90 degrees clockwise)
+#   - "my"   (mirrored about the y-axis)
+#   - "my90" (mirrored about the y-axis, then rotated 90 degrees clockwise)
+# x (float) - x coordinate in um
+# - Required for all types
+# y (float) - y coordinate in um
+# - Required for all types
+# width (float) - width in um
+# - Required for all types, but can be auto-filled for hierarchical and hardmacro if left blank
+# height (float) - height in um
+# - Required for all types, but can be auto-filled for hierarchical and hardmacro if left blank
+
+vlsi.inputs.placement_constraints:
+  - path: "riscv_top"
+    type: toplevel
+
+    # Set the floorplan margin
+    margins:
+      left:   0
+      right:  0
+      top:    0
+      bottom: 0
+
+    # Lower left corner coordinate of the top module
+    x: 0
+    y: 0
+
+    # Floorplan dimensions
+    width: &FP_WIDTH 2300
+    height: 2300
+
+    # Modify the path of the SRAMs according to your design
+    # Add more hardmacro placement constraints if your design
+    # uses more SRAMs
+    # You can play around with different options of
+    # orientations and locations to achieve good QoR
+
+    #SRAM1RW256x32
+  - path: "riscv_top/mem/icache/sram0_00"
+    type: hardmacro
+    x: 30
+    y: 680
+    orientation: "r90"
+    top_layer: M3
+
+  - path: "riscv_top/mem/icache/sram0_01"
+    type: hardmacro
+    x: 30
+    y: 30
+    orientation: "r90"
+    top_layer: M3
+
+  - path: "riscv_top/mem/icache/sram0_10"
+    type: hardmacro
+    x: 730
+    y: 30
+    orientation: "mx"
+    top_layer: M3
+
+  - path: "riscv_top/mem/icache/sram0_11"
+    type: hardmacro
+    x: 1430
+    y: 30
+    orientation: "mx"
+    top_layer: M3
+
+  # - path: "riscv_top/mem/icache/sram1_00"
+  #   type: hardmacro
+  #   x: 1200
+  #   y: 365
+  #   orientation: "mx90"
+  #   top_layer: M3
+
+  # - path: "riscv_top/mem/icache/sram1_01"
+  #   type: hardmacro
+  #   x: 1200
+  #   y: 30
+  #   orientation: "mx90"
+  #   top_layer: M3
+
+  # - path: "riscv_top/mem/icache/sram1_10"
+  #   type: hardmacro
+  #   x: 1585
+  #   y: 365
+  #   orientation: "mx90"
+  #   top_layer: M3
+
+  # - path: "riscv_top/mem/icache/sram1_11"
+  #   type: hardmacro
+  #   x: 1585
+  #   y: 30
+  #   orientation: "mx90"
+  #   top_layer: M3
+
+    #SRAM1RW256x128
+  - path: "riscv_top/mem/dcache/sram0_00"
+    type: hardmacro
+    x: 30 
+    y: 1330
+    orientation: "r0"
+    top_layer: M3
+
+  - path: "riscv_top/mem/dcache/sram0_01"
+    type: hardmacro
+    x: 730
+    y: 1330
+    orientation: "r0"
+    top_layer: M3
+
+    #SRAM1RW256x128
+  - path: "riscv_top/mem/dcache/sram0_10"
+    type: hardmacro
+    x: 1430
+    y: 1330
+    orientation: "r270"
+    top_layer: M3
+
+  - path: "riscv_top/mem/dcache/sram0_11"
+    type: hardmacro
+    x: 1430
+    y: 680
+    orientation: "r270"
+    top_layer: M3
+
+  #   #SRAM1RW256x128
+  # - path: "riscv_top/mem/dcache/sram1_00"
+  #   type: hardmacro
+  #   x: 1200
+  #   y: 1435
+  #   orientation: "mx90"
+  #   top_layer: M3
+
+  # - path: "riscv_top/mem/dcache/sram1_01"
+  #   type: hardmacro
+  #   x: 1200 
+  #   y: 1100
+  #   orientation: "mx90"
+  #   top_layer: M3
+
+  #   #SRAM1RW256x128
+  # - path: "riscv_top/mem/dcache/sram1_10"
+  #   type: hardmacro
+  #   x: 1585
+  #   y: 1435
+  #   orientation: "mx90"
+  #   top_layer: M3
+
+  # - path: "riscv_top/mem/dcache/sram1_11"
+  #   type: hardmacro
+  #   x: 1585
+  #   y: 1100
+  #   orientation: "mx90"
+  #   top_layer: M3
+
+  # - path: "riscv_top/mem/icache/sram0_tag"
+  #   type: hardmacro
+  #   x: 415
+  #   y: 750
+  #   orientation: "r90"
+  #   top_layer: M3
+
+  # - path: "riscv_top/mem/icache/sram1_tag"
+  #   type: hardmacro
+  #   x: 850
+  #   y: 365
+  #   orientation: "mx"
+  #   top_layer: M3
+  
+  # - path: "riscv_top/mem/dcache/sram0_tag"
+  #   type: hardmacro
+  #   x: 850
+  #   y: 1100
+  #   orientation: "r0"
+  #   top_layer: M3
+
+  # - path: "riscv_top/mem/dcache/sram1_tag"
+  #   type: hardmacro
+  #   x: 1200
+  #   y: 750
+  #   orientation: "mx90"
+  #   top_layer: M3
+
+  - path: "riscv_top/place_obs_bottom"
+    type: obstruction
+    obs_types: ["place"]
+    x: 0
+    y: 0
+    width: *FP_WIDTH # must span across the whole floorplan
+    height: 1.08 # 1 core site tall, necessary to avoid shorts
+
+# Pin placement constraints
+# Pins are placed at the bottom of the layout
+vlsi.inputs.pin_mode: generated
+vlsi.inputs.pin.generate_mode: semi_auto
+vlsi.inputs.pin.assignments: [
+  {pins: "*", layers: ["met4"], side: "bottom"}
+]
+
+# Hammer will auto-generate a CPF for simple power designs; see hammer/src/hammer-vlsi/defaults.yml for more info
+vlsi.inputs.power_spec_mode: "auto"
+vlsi.inputs.power_spec_type: "cpf"
+
+# Clock Concurrent Optimization for CTS
+par.innovus.use_cco: true
+
+# Enable this option will let Innovus perform auto floorplan exploration.
+# All the placement constraints specified above will be ignored.
+# This might lead to poor QoR and more DRVs.
+
+# par.innovus.floorplan_mode: auto
